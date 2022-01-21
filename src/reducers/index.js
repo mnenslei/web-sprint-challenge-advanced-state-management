@@ -1,4 +1,4 @@
-import { LOAD_START, LOAD_SUCCESS, LOAD_FAIL, ADD_SMURF, ERROR_MESSAGE } from '../actions';
+import { LOAD_START, LOAD_SUCCESS, LOAD_FAIL, ADD_SMURF, SET_ERROR } from '../actions';
 
 export const initialState = {
    smurfs: [],
@@ -34,7 +34,7 @@ const reducer = (state = initialState, action) => {
                     ...state.smurfs, action.payload
                 ]
             };
-        case ERROR_MESSAGE:
+        case SET_ERROR:
             return {
                 ...state,
                 errorMessage: action.payload
