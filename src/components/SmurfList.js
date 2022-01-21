@@ -19,7 +19,7 @@ import Smurf from './Smurf';
     return(<div className="listContainer">
         {smurfs.map(smurf => {
             console.log(smurf)
-            return <Smurf smurf={smurf} key={smurf.id}/>
+            return <Smurf smurf={smurf} key={smurf.nickname + smurf.position}/>
             })
         }
     </div>);
@@ -29,9 +29,6 @@ const mapStateToProps = state => {
     return {
         smurfs: state.smurfs,
         isLoading: state.isLoading,
-        error: state.error,
-        errorMessage: state.errorMessage,
-        addSmurf: state.addSmurf
       };
 }
 

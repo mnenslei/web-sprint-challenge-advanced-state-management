@@ -29,7 +29,12 @@ const AddForm = (props) => {
             setError('error!');
         } else {
             //dispatch an addSmurf action
-            addSmurf();
+            addSmurf({
+                name: state.name,
+                position: state.position,
+                nickname: state.nickname,
+                description: state.description
+            });
         }
     }
 
@@ -62,11 +67,7 @@ const AddForm = (props) => {
 
 const mapStateToProps = state => {
     return {
-      smurfs: state.smurfs,
-      isLoading: state.isLoading,
       error: state.error,
-      setError: state.setError,
-      addSmurf: state.addSmurf
     };
   }
 
